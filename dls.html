@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DLS Calculator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="myStyle.css">
+</head>
+<body>
+    <div id="WrongInput" class="alert alert-danger" role="alert" style="display: none;">
+            <strong>Warning!!</strong> Check Wickets and Overs TextField  .
+    </div>
+    <div class="container" style="background-color: cadetblue">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="display-4">DLS Calculator</h4>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-sm-6" style="background-color: dimgrey">
+                    <h4 >Team A</h4>
+                    <div class="form-group">
+                        <label for="T1Weekets">Wickets:</label>
+                        <input   type="number" class="form-control" id="T1Weekets" name="T1Weekets" placeholder="Enter Team A Wickets...."onchange="workOnChange()" onkeypress="return isNumber(event)" min="0" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="T1Runs">Runs:</label>
+                        <input type="text" class="form-control" id="T1Runs" name="T1Runs" placeholder="Enter Team A Runs...."onchange="workOnChange()" onkeypress="return isNumber(event)"required>
+                    </div>
+                </div>
+                <div div class="col-sm-6" style="background-color: indianred">
+                    <h4 >Team B</h4>
+                    <div class="form-group">
+                            <label for="T2Weekets">Wickets:</label>
+                            <input type="number" class="form-control" id="T2Weekets" name="T2Weekets" placeholder="Enter Team B Wickets Remaning...."onkeypress="return isNumber(event)" disabled min="0" max="10" required>
+                    </div>
+                    <div class="form-group">
+                            <label for="T2Runs">Runs:</label>
+                            <input type="text" class="form-control" id="T2Runs" name="T2Runs" placeholder="Enter Team B Runs...."onkeypress="return isNumber(event)" disabled required>
+                    </div>
+                    <div class="form-group">
+                            <label for="T2">Overs Remaing:</label>
+                            <input type="number" class="form-control" id="T2Overs" name="T2Overs" placeholder="Enter Team B Remaning Overs...."onkeypress="return isNumber(event)" disabled min="0" max="50"required>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="row" style="background-color: lavender;">
+                <div class="col-sm-12 text-center" style="margin: 2%;">
+                        <button class="btn btn-primary" onclick="retriveResource()" id="btn1" >
+                                <span class="spinner-grow spinner-grow-sm"></span>
+                                For Result Click here..
+                        </button>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="col-sm-12">
+                        <h4 class="display-4">Results</h4>
+                    </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-6">
+                        <label for="T1Runs">Team A Runs : </label>
+                        <span id="teamARunResult"></span>
+                </div>
+                <div class="col-sm-6">
+                        <label for="T1Weekets">Team A Wickets Loss : </label>
+                        <span id="teamAWeeketsResult"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                        <label for="T2Target">Team B Target : </label>
+                        <span id="teamBTarget"></span>
+                </div>
+
+            </div>
+            <div class="row text-center">
+                <div class="col-sm-12">
+                        <p id="FinalResult"></p>
+                </div>
+               
+            </div>
+
+
+    </div>
+    <!-- <form action="">
+        <table>
+
+            <tr>
+                <td><input type="text" name="TARuns" id="TARuns" placeholder="Enter Team A Runs"> </td>
+            </tr>
+        </table>
+    </form> -->
+
+
+    <!-- <label for="overs">Enter Overs</label>
+    <input id="overs" type="text" placeholder="Enter Over Remaing"><br><br>
+    
+    <label for="weekets">Enter weekets</label>
+    <input id="weekets" type="text" placeholder="Enter weekets in hands"><br>
+    
+    <button type="submit"  onclick="retriveResource()">Result</button>
+
+    <p id="result"></p> -->
+    <script src="dls.js"></script>
+</body>
+</html>
